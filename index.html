@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            position: relative;
+            box-sizing: border-box;
+            max-width: 450px;
+            max-height: 450px;
+            margin: auto;
+            border: 3px solid #91ff00;
+        }
+        .magnifier {
+            position: absolute;
+            top:0px;
+            left: 0px;
+            width: 150px;
+            height: 150px;
+            opacity: .3;
+            background: bisque;
+        }
+        .preview {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            overflow: hidden
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img id="demo" width="100%" height="auto" src="https://img12.360buyimg.com/n1/s450x450_jfs/t1/752/16/3914/75219/5b99cbf9Eaf5e4069/fe59a5713cb36eb2.jpg"/>
+        <!-- <div class="spin"></div> -->
+    </div>
+    <!-- <div class="demo">
+        <div class="big-wrap">
+                <img src="https://img12.360buyimg.com/n0/jfs/t1/752/16/3914/75219/5b99cbf9Eaf5e4069/fe59a5713cb36eb2.jpg"/>
+        </div>
+    </div>
+    <script src="./1.js"></script>
+     -->
+    <script src='./imgzoom.js'></script>
+</body>
+</html>

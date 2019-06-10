@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    .demo-event-target {
+        border: 1px darkcyan solid;
+        border-radius: 5px;
+
+    }
+    .demo-event-target .title {
+        padding: 10px 20px;
+        font: 16px bolder;
+    }
+    .demo-event-target ul {
+        position: relative;
+        list-style: none
+    }
+    .demo-event-target ul li {
+        height: 30px;
+        line-height: 30px;
+    }
+    .demo-event-target ul li.item1 {
+        background: #f1fbec;
+        padding-left: 20px; 
+    }
+    .demo-event-target ul li.item2 {
+        background: #b2cea4;
+        padding-left: 50px; 
+    }
+    .demo-event-target ul li.item3 {
+        background: #90c177;
+        padding-left: 80px; 
+    }
+    .demo-event-target ul li.item4 {
+        background: #7aa764;
+        padding-left: 110px; 
+    }
+    .demo-event-target ul li.item5 {
+        background: rgba(220,190,111,.3);
+        margin-left: 140px;
+        margin-top: -30px;
+        padding-left: 140px;
+    }
+    </style>
+</head>
+<body>
+    <div class="demo-event-target">
+        <div class="title">event.target & event.currentTarget Demo</div>
+        <ul>
+            <li class="item1">1</li>
+            <li class="item2">2</li>
+            <li class="item3">3</li>
+            <li class="item4">4</li>
+            <li class="item5">5</li>
+        </ul>
+    </div>
+    <script>
+        var $ul = document.querySelector('.demo-event-target ul')
+        var $li = document.querySelectorAll('.demo-event-target ul li')
+
+        $ul.addEventListener('click', function(e){
+            console.log('ul e.target is %o', e.target)
+            console.log('ul e.currentTarget is %o', e.currentTarget)
+        }, false)
+        
+        console.log(Array.from($li).map(function(item, idx){
+            console.log(idx)
+        }))
+
+        Array.prototype.slice.call($li).map(function($item, idx){
+            $item.addEventListener('click', function(e){
+                console.log('li e.target is %o', e.target)
+                console.log('li e.currentTarget is %o', e.currentTarget)
+            }, false)
+        })
+    </script>
+</body>
+</html>
